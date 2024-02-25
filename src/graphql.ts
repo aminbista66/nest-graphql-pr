@@ -8,6 +8,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export interface AddBookArgs {
+    id: number;
+    price: number;
+    title: string;
+}
+
 export interface Author {
     id: number;
     name?: Nullable<string>;
@@ -20,6 +26,12 @@ export interface Book {
     title: string;
 }
 
+export interface IMutation {
+    addBook(addBookArgs: AddBookArgs): string | Promise<string>;
+    deleteBook(id: number): string | Promise<string>;
+    updateBook(id: number, updateBookArgs: AddBookArgs): string | Promise<string>;
+}
+
 export interface Post {
     id: number;
     title: string;
@@ -28,6 +40,7 @@ export interface Post {
 
 export interface IQuery {
     author(name: string): Author[] | Promise<Author[]>;
+    book(id: number): Nullable<Book> | Promise<Nullable<Book>>;
     books(): Book[] | Promise<Book[]>;
     posts(): Post[] | Promise<Post[]>;
 }
