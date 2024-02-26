@@ -9,9 +9,9 @@
 /* eslint-disable */
 
 export interface AddBookArgs {
-    id: number;
-    price: number;
-    title: string;
+    id?: Nullable<number>;
+    price?: Nullable<number>;
+    title?: Nullable<string>;
 }
 
 export interface Author {

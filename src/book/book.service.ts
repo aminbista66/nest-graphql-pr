@@ -19,8 +19,8 @@ export class BookService {
   }
 
   updateBook(id: number, updatePayload: BookModel): string {
-    let book = this.books.find((book) => book.id === id);
-    book = { ...book, ...updatePayload };
+    const bookIndex = this.books.findIndex((book) => book.id === id);
+    this.books[bookIndex] = { ...this.books[bookIndex], ...updatePayload };
 
     return 'Book updated successfully!';
   }

@@ -3,9 +3,9 @@
 # ------------------------------------------------------
 
 input AddBookArgs {
-  id: Int!
-  price: Int!
-  title: String!
+  id: Int
+  price: Int
+  title: String
 }
 
 type Author {
